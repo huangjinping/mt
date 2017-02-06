@@ -1,0 +1,6 @@
+com\entity\QQ.class
+com\mapper\UserMapper.class
+com\entity\LOL.class
+com\service\UserService.class
+com\controller\userController.class
+com\asd.class

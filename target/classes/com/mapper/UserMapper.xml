@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserMapper">
+
+	<select id="getUser" resultType="String">
+		SELECT nickname FROM qq
+	</select>
+	<sql id="Base_Column_List">
+		nickname, password
+	</sql>
+
+	<insert id="add" parameterType="com.entity.QQ">
+		 insert qq (nickname, password) values(#{nickname}, #{password}) 
+	</insert>
+
+	 <select id="getCurrentUser" resultType="com.entity.QQ"  
+		parameterType="String">
+		SELECT <include refid="Base_Column_List" /> FROM qq WHERE password = #{password}
+	</select>
+
+</mapper>
